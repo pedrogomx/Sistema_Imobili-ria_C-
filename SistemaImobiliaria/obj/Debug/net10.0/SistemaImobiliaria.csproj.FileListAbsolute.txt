@@ -1,0 +1,14 @@
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\bin\Debug\net10.0\SistemaImobiliaria.exe
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\bin\Debug\net10.0\SistemaImobiliaria.deps.json
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\bin\Debug\net10.0\SistemaImobiliaria.runtimeconfig.json
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\bin\Debug\net10.0\SistemaImobiliaria.dll
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\bin\Debug\net10.0\SistemaImobiliaria.pdb
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\SistemaImobiliaria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\SistemaImobiliaria.AssemblyInfoInputs.cache
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\SistemaImobiliaria.AssemblyInfo.cs
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\SistemaImobiliaria.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\SistemaImobiliaria.dll
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\refint\SistemaImobiliaria.dll
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\SistemaImobiliaria.pdb
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\SistemaImobiliaria.genruntimeconfig.cache
+C:\Users\pedro\Desktop\LAB\ME\SistemaImobiliaria\SistemaImobiliaria\obj\Debug\net10.0\ref\SistemaImobiliaria.dll

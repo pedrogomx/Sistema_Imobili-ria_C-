@@ -1,0 +1,143 @@
+﻿using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
+
+namespace SistemaImobiliaria
+{
+    class Program
+    {
+        // Arquivos
+        static string arquivoImoveis = "imoveis.txt";
+        static string arquivosParametros = "parametros.txt";
+
+        // Entrada
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            ExibirMenu();
+        }
+
+        //  Metodos de cada funcionalidade 
+        static void CadastrarParametros() { }
+        static void CadastrarImovel() { }
+        static void ListarImoveis() { }
+        static void AtualizarStatus() { }
+
+        static void ExibirMenu()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=== Sistema de Imobiliária ===");
+                Console.WriteLine("1. Cadastrar Imóvel");
+                Console.WriteLine("2. Listar Imóveis");
+                Console.WriteLine("3. Atualizar Status");
+                Console.WriteLine("4. Cadastrar Parâmetros");
+                Console.WriteLine("5. Sair");
+                Console.Write("Escolha uma opção: ");
+
+                int opcao = 0;
+
+                try
+                {
+                    opcao = int.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Opção inválida. Pressione Enter para tentar novamente.");
+                    Console.ReadLine();
+                    continue;
+                }
+
+                switch (opcao)
+                {
+                    case 1:
+                        CadastrarImovel();
+                        break;
+                    case 2:
+                        ListarImoveis();
+                        break;
+                    case 3:
+                        AtualizarStatus();
+                        break;
+                    case 4:
+                        CadastrarParametros();
+                        break;
+                    case 5:
+                        Console.WriteLine("Encerrando o sistema");
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida!");
+                        Console.ReadLine();
+                        break;
+                }
+            }
+
+            static void CadastrarImovel()
+            {
+                Console.Clear();
+                Console.WriteLine("=== Cadastrar Imóvel ===");
+
+
+
+                {
+                    
+
+                    Console.Write("Insira o id do imóvel: ");
+                    string idimovel = Console.ReadLine();
+                    int agr = Convert.ToInt32(idimovel);
+                    Console.Write("Insira o nome do imóvel: ");
+                    string nomeimovel = Console.ReadLine();
+                    Console.Write("Insira a descrição do imóvel: ");
+                    string descricaoimovel = Console.ReadLine();
+                    Console.Write("Insira o endereço do imóvel: ");
+                    string enderecoimovel = Console.ReadLine();
+                    Console.Write("Insira o m² do imóvel: ");
+                    string metragemimovel = Console.ReadLine();
+                    int agr2 = Convert.ToInt32(metragemimovel);
+                    Console.Write("Insira o preço do imóvel: ");
+                    string precoimovel = Console.ReadLine();
+                    int agr3 = Convert.ToInt32(precoimovel);
+
+                    string message = $"ID do imóvel: {idimovel}"
+                                     +
+                                     $"Nome do imóvel: {nomeimovel}"
+                                     +
+                                     $"Descrilçao: {descricaoimovel}"
+                                     +
+                                     $"Endereço: {enderecoimovel}"
+                                     +
+                                     $"Metragem: {metragemimovel}"
+                                     +
+                                     $"Valor: {precoimovel}";
+
+                                    
+                    Console.WriteLine(message);
+                    Console.ReadLine();
+
+
+
+                }
+                  static void CadastrarParametros()
+                {
+                    Console.Clear();
+                    Console.WriteLine("=== Casdastrar Parametros ===");
+
+                    
+
+
+                }
+
+                
+
+
+
+            }
+        }
+    }
+}
+
+

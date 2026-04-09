@@ -1,0 +1,179 @@
+﻿using System;
+using System.Diagnostics;
+using System.IO;
+
+namespace SistemaImobiliaria
+{
+    class Program
+    {
+        // Arquivos
+        static string arquivoImoveis = "imoveis.txt";
+        static string arquivosParametros = "parametros.txt";
+
+        // Entrada
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            ExibirMenu();
+        }
+
+        static void ExibirMenu()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=== Sistema de Imobiliária ===");
+                Console.WriteLine("1. Cadastrar Parâmetros de Comissão");
+                Console.WriteLine("2. Cadastrar Imóvel");
+                Console.WriteLine("3. Listar Imóveis e Estimativa de Comissão");
+                Console.WriteLine("4. Atualizar Status de Venda");
+                Console.WriteLine("5. Sair");
+                Console.Write("Escolha uma opção: ");
+
+                int opcao = LerInteiroOuNegativo();
+
+                switch (opcao)
+                {
+                    case 1:
+                        CadastrarParametros();
+                        break;
+                    case 2:
+                        CadastrarImovel();
+                        break;
+                    case 3:
+                        ListarImoveis();
+                        break;
+                    case 4:
+                        AtualizarStatus();
+                        break;
+                    case 5:
+                        Console.WriteLine("Encerrando o sistema...");
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida. Pressione Enter para continuar.");
+                        Console.ReadLine();
+                        break;
+                }
+            }
+        }
+
+        // Lê uma única tecla numérica sem precisar pressionar Enter
+        static int LerInteiroOuNegativo()
+        {
+            var key = Console.ReadKey(intercept: true);
+            Console.WriteLine(key.KeyChar);
+            if (char.IsDigit(key.KeyChar))
+            {
+                return (int)char.GetNumericValue(key.KeyChar);
+            }
+            return -1;
+        }
+
+        static string LerTexto(string prompt)
+        {
+            Console.Write(prompt);
+            return Console.ReadLine() ?? string.Empty;
+        }
+
+        static void CadastrarParametros()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Cadastrar Parametros ===");
+
+            double[] percentuais = new double[4]; // Fiz isso para que seja lido até 4 algarismos no mesmo numero, ou seja, 10,57% por exemplo, e não apenas 10%
+
+            string[] faixas = {
+                               "Faixa 1 - Ate 50 m2",
+                               "Faixa 2 - De 51 a 300 m2",
+                               "Faixa 3 - De 301 a 2000 m2",
+                               "Faixa 4 - Acima de 2000 m2"
+
+                              };
+
+            // Aqui vou criar um loop para ler os percentuais
+
+            for (int i = 0; i < 4; i++)
+            {
+                bool valido = false;
+                while (!valido) // Isso é para que o usuário repita ate que digite um número valido
+                {
+                    Console.Write($"Insira o percentual de comissão para {faixas[i]} (%): ");
+                    try
+                    {
+                        string entrada = Console.ReadLine().Replace(",", "."); // Permite que o usuário use vírgula ou ponto como separador decimal
+                        percentuais[i] = double.Parse(entrada, System.Globalization.CultureInfo.InvariantCulture); // Converte a string para double usando a cultura invariante para garantir que o ponto seja interpretado como separador decimal
+                        valido = true; //Estou marcando como válido para sair do loop
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Entrada inválida. Por favor, insira um número válido para o percentual de comissão.");
+                    }
+                }
+
+                try
+
+                {
+                    string[] linhas =
+                    {
+                        percentuais[0].ToString(System.Globalization.CultureInfo.InvariantCulture),
+                        percentuais[1].ToString(System.Globalization.CultureInfo.InvariantCulture),
+                        percentuais[2].ToString(System.Globalization.CultureInfo.InvariantCulture),
+                        percentuais[3].ToString(System.Globalization.CultureInfo.InvariantCulture)
+                    };
+
+                    File.WriteAllLines(arquivosParametros, linhas); // Escreve os percentuais no arquivo, cada um em uma linha
+                    Console.WriteLine("Parâmetros de comissão cadastrados com sucesso!");
+
+                }
+                catch                {
+                    Console.WriteLine("Ocorreu um erro ao salvar os parâmetros. Por favor, tente novamente.");
+                }
+                static void CadastrarImovel()
+                {
+                    Console.Clear();
+                    Console.WriteLine("=== Cadastrar Imóvel ===");
+
+                    Console.Write("Insira o id do imóvel: ");
+                    string idimovel = Console.ReadLine();
+                    int agr = Convert.ToInt32(idimovel);
+                    Console.Write("Insira o nome do imóvel: ");
+                    string nomeimovel = Console.ReadLine();
+                    Console.Write("Insira a descrição do imóvel: ");
+                    string descricaoimovel = Console.ReadLine();
+                    Console.Write("Insira o endereço do imóvel: ");
+                    string enderecoimovel = Console.ReadLine();
+                    Console.Write("Insira o m² do imóvel: ");
+                    string metragemimovel = Console.ReadLine();
+                    int agr2 = Convert.ToInt32(metragemimovel);
+                    Console.Write("Insira o preço do imóvel: ");
+                    string precoimovel = Console.ReadLine();
+                    int agr3 = Convert.ToInt32(precoimovel);
+
+                    string message = $"ID do imóvel: {idimovel}"
+                                     +
+                                     $"Nome do imóvel: {nomeimovel}"
+                                     +
+                                     $"Descrição: {descricaoimovel}"
+                                     +
+                                     $"Endereço: {enderecoimovel}"
+                                     +
+                                     $"Metragem: {metragemimovel}"
+                                     +
+                                     $"Valor: {precoimovel}";
+
+                    Console.WriteLine(message);
+                    Console.ReadLine();
+                }
+
+                static void ListarImoveis()
+                {
+                }
+
+                static void AtualizarStatus()
+                {
+                }
+            }
+        }
+    }
+}

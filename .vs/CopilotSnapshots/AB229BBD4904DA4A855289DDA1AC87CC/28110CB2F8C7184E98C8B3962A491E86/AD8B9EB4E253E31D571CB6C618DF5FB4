@@ -1,0 +1,70 @@
+﻿using System;
+
+namespace SistemaImobiliaria
+{
+    class Program
+    {
+        // Arquivos
+        static string arquivoImoveis = "imoveis.txt";
+        static string arquivosParametros = "parametros.txt";
+
+        // Entrada
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            ExibirMenu();
+        }
+
+        // ■■■ Metodos de cada funcionalidade (placeholders) ■■■
+        static void CadastrarParametros() { }
+        static void CadastrarImovel() { }
+        static void ListarImoveis() { }
+        static void AtualizarStatus() { }
+
+        static void ExibirMenu()
+        {
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("=== Sistema de Imobiliária ===");
+                Console.WriteLine("1. Cadastrar Imóvel");
+                Console.WriteLine("2. Listar Imóveis");
+                Console.WriteLine("3. Atualizar Status");
+                Console.WriteLine("4. Cadastrar Parâmetros");
+                Console.WriteLine("0. Sair");
+                Console.Write("Escolha uma opção: ");
+
+                var opc = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(opc))
+                    continue;
+
+                switch (opc.Trim())
+                {
+                    case "1":
+                        Console.WriteLine("Cadastrar Imóvel - (a implementar)");
+                        break;
+                    case "2":
+                        Console.WriteLine("Listar Imóveis - (a implementar)");
+                        break;
+                    case "3":
+                        Console.WriteLine("Atualizar Status - (a implementar)");
+                        break;
+                    case "4":
+                        Console.WriteLine("Cadastrar Parâmetros - (a implementar)");
+                        break;
+                    case "0":
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida.");
+                        break;
+                }
+
+                Console.WriteLine("\nPressione Enter para continuar...");
+                Console.ReadLine();
+            }
+        }
+    }
+}
+
+
